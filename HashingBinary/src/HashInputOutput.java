@@ -21,7 +21,7 @@ public class HashInputOutput {
 	        String inputFile2 = "D:\\Projects\\Java2\\HashingBinary\\src\\words_alpha.txt";
 	        String outputFileLocation = "D:\\Projects\\Java2\\HashingBinary\\src\\output\\";
 	        //Given a input in form of file, prints words and its count to output file.
-	        table.processFileOutput(inputFile1, outputFileLocation);  
+	        table.processFileOutput(inputFile2, outputFileLocation);  
 	        //Given an Input String prints to the console.
 	        //table.processString("THE THE THE the the th tge TFE tge tfe tke kte");
 	}
