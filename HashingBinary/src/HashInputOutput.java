@@ -43,16 +43,13 @@ public class HashInputOutput {
 		HashTable hashTable = new HashTable(wordInputList.size());
         for (String input : wordInputList) {
             if (!input.isEmpty()) {
-                try {
-                	//this function will check if value exists, if it doesn't it will add
-                	//or else throw exception
-                	//if the value exists, it will increment its counter
-                    hashTable.increase(input);
-                } catch (Exception e) {
-                	// It throws exception if unable to find a key, thus it would insert a new key with value 1.
-                    //System.out.println("Creating new Word with key: " + input);
-                    hashTable.insert(input, 1);
-                }
+            	int count = hashTable.find(input);
+            		if(count == 0) {
+            			hashTable.insert(input, 1);
+            		}
+            		else {
+            			hashTable.insert(input, ++count);
+            		}
             }
         }        
          hashTableOutput = hashTable.listAllKeys();	

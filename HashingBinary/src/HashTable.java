@@ -44,10 +44,10 @@ public class HashTable {
 	    public void insert(String key, int value){
 	        Node node = new Node(key,value);
 	        int hashCode = hashCode(node.textContent);
-	        this.hashBucketArray[hashCode].insertOrUpdate(node);
+	        this.hashBucketArray[hashCode].insert(node);
 	    }
 
-	    public int find(String key) throws Exception {
+	    public int find(String key){
 	        int hashCode = hashCode(key);
 	        return this.hashBucketArray[hashCode].find(key);
 	    }
@@ -63,10 +63,10 @@ public class HashTable {
 	    }
 
 	    public String listAllKeys(){
-	        StringBuilder sb = new StringBuilder();
+	        StringBuilder allKeys = new StringBuilder();
 	        for(int i=0;i<this.hashBucketArraySize;i++){
-	            sb.append(hashBucketArray[i].getAvailableKeyValues());
+	        	allKeys.append(hashBucketArray[i].nodeListToString());
 	        }
-	        return sb.toString();
+	        return allKeys.toString();
 	    }
 }
